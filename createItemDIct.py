@@ -20,7 +20,6 @@ def createItemDict(url, name): # Returns Collection of item
             img = "https:" + item.find('img')['data-src']
             altimg = "https:" + item.find('img')['data-altimage']
             item_id =  item.find('article')['data-articlecode']
-            print(item_link)
             temp= {
                 "id": item_id,
                 "product_page": item_link,
@@ -28,6 +27,6 @@ def createItemDict(url, name): # Returns Collection of item
                 "price": new_price,
                 "image": [img, altimg]
                 }
-            item_dic.setdefault(name,[]) ##fe
+            item_dic.setdefault(name,[]) 
             item_dic[name].append(temp)
     return item_dic
