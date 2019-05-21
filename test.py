@@ -2,9 +2,9 @@ import createItemDIct as p
 
 
 hm_array = []
-url = "https://www2.hm.com/en_us/men/products/jeans.html?page-size=1000"
+url = "https://www2.hm.com/en_us/index.html"
 
-p.createItemDict(url)
+p.findMensItems(url)
 
 
 # jean_arr.append(jean_dic)

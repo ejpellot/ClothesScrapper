@@ -4,6 +4,7 @@ import json
 import re
 agent = {"User-Agent":'Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.115 Safari/537.36'}
 
+    
 def createItemDict(url): # Returns Collection of given item
     name_search = re.search('products/(.+?).html', url)
     name = name_search.group(1).upper()
@@ -33,5 +34,8 @@ def createItemDict(url): # Returns Collection of given item
             item_dic[name].append(temp)
     return item_dic
 
-def getItemUrl(): # Returns URL of each item in menu
-    return url
+def findMensItems(url): # Returns URL of each item in menu
+    r = requests.get(url, headers=agent)
+    soup = BeautifulSoup(r.text, 'html.parser')
+    item_title = soup.select(".menu__primary")
+    
