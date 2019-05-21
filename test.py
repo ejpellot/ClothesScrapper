@@ -1,9 +1,10 @@
-import populateItem as p
+import createItemDIct as p
+
 
 hm_array = []
 url = "https://www2.hm.com/en_us/men/products/jeans.html?page-size=1000"
 
-p.createItemDict(url,"Jeans")
+p.createItemDict(url)
 
 
 # jean_arr.append(jean_dic)
