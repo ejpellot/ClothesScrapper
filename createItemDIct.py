@@ -37,5 +37,6 @@ def createItemDict(url): # Returns Collection of given item
 def findMensItems(url): # Returns URL of each item in menu
     r = requests.get(url, headers=agent)
     soup = BeautifulSoup(r.text, 'html.parser')
-    item_title = soup.select(".menu__primary")
-    
+    item_title = soup.select(".menu__primary.")
+    for item in item_title:
+        print (item)
